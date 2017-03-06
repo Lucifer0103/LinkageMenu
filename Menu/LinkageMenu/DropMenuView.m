@@ -173,7 +173,7 @@
         CGRect adjustFrame = tableView.frame;
         
         adjustFrame.size.width = kWidth / addTableCount ;
-        adjustFrame.origin.x = adjustFrame.size.width * i;
+        adjustFrame.origin.x = adjustFrame.size.width * i + 0.5 * i;
         adjustFrame.size.height = self.tableViewUnderView.frame.size.height ;
         
         tableView.frame = adjustFrame;
@@ -446,7 +446,7 @@
             tableView.frame = CGRectMake(0, 0, 0, 0);
             tableView.backgroundColor = [UIColor whiteColor];
             tableView.tableFooterView = [[UIView alloc] init];
-            
+            tableView.showsVerticalScrollIndicator = NO;
             tableView.rowHeight = self.rowHeightNum;
         }
     }
