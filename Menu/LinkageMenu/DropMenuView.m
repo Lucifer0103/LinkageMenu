@@ -357,6 +357,7 @@
             }
             [self adjustTableViews];
             [secondTableView reloadData];
+            [thirdTableView reloadData];
             
         }else if (tableView == self.tableViewArr[1]){
             
