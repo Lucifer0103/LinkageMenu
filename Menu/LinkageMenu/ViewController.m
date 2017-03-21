@@ -21,6 +21,14 @@
 
 @implementation ViewController
 
+-(void)viewWillDisappear:(BOOL)animated{
+
+    [super viewWillDisappear:animated];
+    
+//    [self.menuScreeningView menuScreeningViewDismiss];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

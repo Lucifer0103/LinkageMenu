@@ -10,4 +10,6 @@
 
 @interface MenuScreeningView : UIView
 
+-(void)menuScreeningViewDismiss;
+
 @end

@@ -145,7 +145,7 @@
             
             [self.tableViewUnderView addSubview:tableView];
             
-            [UIView animateWithDuration:0.2 animations:^{
+            [UIView animateWithDuration:0.2f animations:^{
                 if (self.arrowView) {
                     self.arrowView.transform = CGAffineTransformMakeRotation(M_PI);
                 }
@@ -406,20 +406,17 @@
         
         [self endEditing:YES];
         
-        [UIView animateWithDuration:.25f animations:^{
-            self.alpha = .0f;
-        } completion:^(BOOL finished) {
-            
-            [self.tableViewUnderView.subviews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
-                [obj removeFromSuperview];
-            }];
-            
-            [self removeFromSuperview];
-            [UIView animateWithDuration:0.2 animations:^{
-                if (self.arrowView) {
-                    self.arrowView.transform = CGAffineTransformMakeRotation(0);
-                }
-            }];
+        
+        self.alpha = .0f;
+        [self.tableViewUnderView.subviews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
+            [obj removeFromSuperview];
+        }];
+        
+        [self removeFromSuperview];
+        [UIView animateWithDuration:0.2 animations:^{
+            if (self.arrowView) {
+                self.arrowView.transform = CGAffineTransformMakeRotation(0);
+            }
         }];
         
     }
